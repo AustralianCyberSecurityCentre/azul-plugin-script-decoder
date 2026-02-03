@@ -71,7 +71,6 @@ import operator
 import optparse
 import os
 import os.path
-import re
 import sys
 import traceback
 import xml.dom.minidom
@@ -419,7 +418,7 @@ def ParseINIFile():
     keywords = []
     if oConfigParser.has_section("keywords"):
         for key, value in oConfigParser.items("keywords"):
-            if not key in keywords:
+            if key not in keywords:
                 keywords.append(key)
     return keywords
 
@@ -448,7 +447,6 @@ def PDFiD(file, allNames=False, extraData=False, disarm=False, force=False):
             </Dates>
     </PDFiD>
     """
-
     word = ""
     wordExact = []
     hexcode = False
@@ -479,7 +477,7 @@ def PDFiD(file, allNames=False, extraData=False, disarm=False, force=False):
     words = {}
     dates = []
     for extrakeyword in ParseINIFile():
-        if not extrakeyword in keywords:
+        if extrakeyword not in keywords:
             keywords.append(extrakeyword)
     for keyword in keywords:
         words[keyword] = [0, 0]
@@ -681,7 +679,7 @@ def PDFiD(file, allNames=False, extraData=False, disarm=False, force=False):
     if allNames:
         keys = sorted(words.keys())
         for word in keys:
-            if not word in keywords:
+            if word not in keywords:
                 eleKeyword = xmlDoc.createElement("Keyword")
                 eleKeywords.appendChild(eleKeyword)
                 att = xmlDoc.createAttribute("Name")
