@@ -30,9 +30,6 @@ dependencies = [
 
 [project.scripts]
 azul-plugin-script-decoder = "azul_plugin_script_decoder.main:main"
-pdfid = "azul_plugin_script_decoder.didier.pdfid:Main"
-pdf-parser = "azul_plugin_script_decoder.didier.pdf_parser:Main"
-decode-vbe = "azul_plugin_script_decoder.didier.decode_vbe:Main"
 
 [project.urls]
 Documentation = "https://australiancybersecuritycentre.github.io/azul/"
