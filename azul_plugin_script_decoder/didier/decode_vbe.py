@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# NOTE - this script has been modified to support byte based input/output and error handling
+# This makes it sigificantly different to the original script.
 
 __description__ = "Decode VBE script"
 __author__ = "Didier Stevens"
