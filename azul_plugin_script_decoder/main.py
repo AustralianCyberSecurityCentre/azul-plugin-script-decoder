@@ -12,6 +12,7 @@ import re
 from azul_runner import (
     BinaryPlugin,
     Feature,
+    FeatureType,
     FeatureValue,
     Job,
     add_settings,
@@ -30,7 +31,7 @@ class AzulPluginScriptDecoder(BinaryPlugin):
         filter_data_types={"content": []},
     )
     FEATURES = [
-        Feature(name="tag", desc="Any informational label about the sample", type=str),
+        Feature(name="tag", desc="Any informational label about the sample", type=FeatureType.String),
     ]
 
     PATTERN = rb"#@~\^......==(.+)......==\^#~@"
