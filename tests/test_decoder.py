@@ -43,8 +43,7 @@ class TestExecute(test_template.TestPlugin):
                 state=State(State.Label.COMPLETED),
                 events=[
                     Event(
-                        entity_type="binary",
-                        entity_id="652566914671a9d5fb5ad0b75b6c9023fa8c9cff2c2d2254daad78ba40c14e0b",
+                        sha256="652566914671a9d5fb5ad0b75b6c9023fa8c9cff2c2d2254daad78ba40c14e0b",
                         data=[
                             EventData(
                                 hash="bbc6275f157e997b85916664916bc87e816a7cebb729f56e02a0b2b5e5fb1615", label="text"
@@ -54,11 +53,9 @@ class TestExecute(test_template.TestPlugin):
                     ),
                     Event(
                         parent=EventParent(
-                            entity_type="binary",
-                            entity_id="652566914671a9d5fb5ad0b75b6c9023fa8c9cff2c2d2254daad78ba40c14e0b",
+                            sha256="652566914671a9d5fb5ad0b75b6c9023fa8c9cff2c2d2254daad78ba40c14e0b",
                         ),
-                        entity_type="binary",
-                        entity_id="bbc6275f157e997b85916664916bc87e816a7cebb729f56e02a0b2b5e5fb1615",
+                        sha256="bbc6275f157e997b85916664916bc87e816a7cebb729f56e02a0b2b5e5fb1615",
                         relationship={"action": "decoded"},
                         data=[
                             EventData(
@@ -92,8 +89,7 @@ class TestExecute(test_template.TestPlugin):
                 state=State(State.Label.COMPLETED),
                 events=[
                     Event(
-                        entity_type="binary",
-                        entity_id="dbe947a1d1935df56a5989dd88aa9e5e458e5024848f4b8e990375fa8518ff75",
+                        sha256="dbe947a1d1935df56a5989dd88aa9e5e458e5024848f4b8e990375fa8518ff75",
                         data=[
                             EventData(
                                 hash="bbc6275f157e997b85916664916bc87e816a7cebb729f56e02a0b2b5e5fb1615",
@@ -105,11 +101,9 @@ class TestExecute(test_template.TestPlugin):
                     ),
                     Event(
                         parent=EventParent(
-                            entity_type="binary",
-                            entity_id="dbe947a1d1935df56a5989dd88aa9e5e458e5024848f4b8e990375fa8518ff75",
+                            sha256="dbe947a1d1935df56a5989dd88aa9e5e458e5024848f4b8e990375fa8518ff75",
                         ),
-                        entity_type="binary",
-                        entity_id="bbc6275f157e997b85916664916bc87e816a7cebb729f56e02a0b2b5e5fb1615",
+                        sha256="bbc6275f157e997b85916664916bc87e816a7cebb729f56e02a0b2b5e5fb1615",
                         relationship={"action": "decoded", "offset": "0x30", "language": "jscript"},
                         data=[
                             EventData(

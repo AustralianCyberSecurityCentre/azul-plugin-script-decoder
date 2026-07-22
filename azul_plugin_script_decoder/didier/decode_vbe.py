@@ -65,7 +65,7 @@ def File2String(filename):
             return None
 
 
-def File2StringHash(filename):
+def File2StringHash(filename) -> str | bytes | None:
     decoded = None
     if filename.startswith("#h#"):
         try:
@@ -307,7 +307,7 @@ def Decode(data):
             index = index + 1
         if (byte == 9 or byte > 31 and byte < 128) and byte != 60 and byte != 62 and byte != 64:
             byte = dDecode[byte][dCombination[index % 64]]
-            if type(byte) == str:
+            if isinstance(byte, str):
                 byte = ord(byte)
         result.append(byte)
 
@@ -316,7 +316,7 @@ def Decode(data):
     return bytes(result)
 
 
-def DecodeVBE(filename, options):
+def DecodeVBE(filename: str, options):
     FixPipe()
     if sys.platform == "win32":
         import msvcrt
@@ -326,6 +326,8 @@ def DecodeVBE(filename, options):
         content = sys.stdin.read()
     else:
         content = File2StringHash(filename)
+    if not isinstance(content, bytes):
+        raise TypeError(f"Expected content to be bytes, got {type(content)}")
     oMatch = re.search(b"#@~\\^......==(.+)......==\\^#~@", content)
     if oMatch == None:
         print("No encoded script found!")
